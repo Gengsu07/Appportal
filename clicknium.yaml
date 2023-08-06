@@ -1,14 +1,13 @@
 startUp: app
 ignoreFiles: .gitignore
-type: script
 log:
   folder: null
   type: File
+type: script
 requirements:
   python: 3.11.3
+  pip: null
   packages:
     - package: clicknium
       version: null
-  locators:
-    - id: 08db9488-f1ed-4e86-8179-69c777501360
-      name: intranet
+  locators: []

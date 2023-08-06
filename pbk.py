@@ -1,57 +1,56 @@
 from clicknium import clicknium as cc, locator, ui
 import pyautogui as pag
 import time
+from mpnspm import sorted_files, delfiles, moving_files
+import os
 
 
-def pbk():
-    tab = cc.chrome.attach_by_title_url(
-        url='https://appportal.intranet.pajak.go.id/*')
-    # tab = cc.chrome.open('https://appportal.intranet.pajak.go.id')
-    # tab.wait_appear(locator.intranet.mpnharianrekon.text_username)
-    # tab.find_element(locator.intranet.mpnharianrekon.text_username).set_text('810202558')
-    # tab.find_element(locator.intranet.mpnharianrekon.password_password).set_text('Gengsu@110')
-    # tab.wait_appear(locator.intranet.mpnharianrekon.submit_loginsub)
-    # pag.click(x=1910, y=950, duration=1)
+def pbk(kpp, download_path, baseDownloadedDir):
+    tab = cc.chrome.attach_by_title_url(url="https://appportal.intranet.pajak.go.id/*")
+
     tab.refresh()
     time.sleep(1)
     counter = 0
-    pag.alert('Pergi ke halaman PBK dlu')
-    # pag.confirm('Klik ')
-
-    # pag.moveTo(x=190, y=210, duration=1)
-    # pag.moveTo(x=199, y=260, duration=1)
-    # pag.moveTo(x=370, y=260, duration=1)
-    # pag.moveTo(x=370, y=400, duration=1)
-    # time.sleep(1)
-    # pag.click(x=370, y=400, duration=1)
-    # pag.moveTo(x=700, y=650, duration=1)
-
-    kpp = ['001', '002', '003', '004', '005',
-           '006', '007', '008', '009', '097']
+    pag.alert("Pergi ke halaman PBK dlu")
+    kpp = kpp
+    placeholder = []
     for kantor in kpp:
         time.sleep(1)
         ui(locator.intranet.pbk.select_idkpp).click()
         time.sleep(1)
         pag.write(kantor, interval=0.2)
         time.sleep(1)
-        pag.hotkey('enter')
+        pag.hotkey("enter")
         time.sleep(1)
 
         cc.find_element(locator.intranet.pbk.button_btncari).set_focus()
-        tab.find_element(locator.intranet.pbk.button_btncari).click(
-            mouse_button='left')
-        time.sleep(1)
-        cc.find_element(locator.intranet.pbk.button_csv).set_focus()
-        tab.find_element(locator.intranet.pbk.button_csv).click(
-            mouse_button='left')
-        counter += 1
-        # pag.click(x=1195, y=305, duration=1)
-        # time.sleep(2)
-        # pag.click(x=100, y=377, duration=1)
+        tab.find_element(locator.intranet.pbk.button_btncari).click(mouse_button="left")
         time.sleep(3)
-    print(f'PBK:{counter}')
+        tab.find_element(locator.intranet.pbk.button_csv).wait_property(
+            name="aria-controls", value="example"
+        )
+        cc.find_element(locator.intranet.pbk.button_csv).set_focus()
+        tab.find_element(locator.intranet.pbk.button_csv).click(mouse_button="left")
+        counter += 1
+        namabaru = "\\PBK" + "_" + f"{kantor}" + ".csv"
+        placeholder.append(namabaru)
+        time.sleep(3)
+    print(f"PBK:{counter}")
+    pbk_sorted = sorted_files(download_path)
+    num_files = len(kpp)  # per va luta
+    if len(pbk_sorted) == num_files:
+        pbk_dir = os.path.join(baseDownloadedDir, "pbk")
+        # bikin folder
+        if not os.path.exists(pbk_dir):
+            os.makedirs(pbk_dir)
+        delfiles(pbk_dir)
+        for n, nama in enumerate(pbk_sorted):
+            parent_dir = nama.split("\\")
+            parent_dir = "\\".join(x for x in parent_dir[:-1])
+            os.rename(nama, parent_dir + placeholder[n])
+    pbk_sorted = sorted_files(download_path)
+    moving_files(pbk_sorted, "pbk")
 
 
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     pbk()

@@ -1,0 +1,874 @@
+﻿{
+  "id": "9c0078f0-5cf5-4abc-87e3-bb8c90f171b4",
+  "name": "intranet",
+  "nodes": [
+    {
+      "id": "056ccd29-3e0b-44d7-8d86-47f97ce782c0",
+      "name": "pbk",
+      "nodes": [],
+      "locators": [
+        {
+          "id": "da47d693-cc0e-4f1c-a1f2-3d741751030c",
+          "name": "select_idkpp",
+          "filePath": "a15ec75d-a186-43db-a914-55419b1d181b.jpg",
+          "content": {
+            "automationType": "Chrome",
+            "processName": {
+              "value": "chrome"
+            },
+            "filePath": {
+              "value": "chrome.exe"
+            },
+            "version": {
+              "value": "1.3"
+            },
+            "childControls": [
+              {
+                "identifier": {
+                  "role": {
+                    "value": "window"
+                  },
+                  "title": {
+                    "value": "Aplikasi Portal - Direktorat Jenderal Pajak"
+                  },
+                  "url": {
+                    "value": "https://appportal.intranet.pajak.go.id/portal/#",
+                    "excluded": true
+                  },
+                  "className": {
+                    "value": "Chrome_WidgetWin_1"
+                  },
+                  "controlMetaType": "Tab"
+                },
+                "childControls": [
+                  {
+                    "identifier": {
+                      "tag": {
+                        "value": "SELECT"
+                      },
+                      "id": {
+                        "value": "idkpp"
+                      },
+                      "class": {
+                        "value": "form-control",
+                        "excluded": true
+                      },
+                      "ancestorId": {
+                        "value": "form ",
+                        "excluded": true
+                      },
+                      "ancestorClass": {
+                        "value": "col-md-4 form group",
+                        "excluded": true
+                      },
+                      "isLeaf": {
+                        "value": "0",
+                        "excluded": true
+                      },
+                      "cssSelector": {
+                        "value": "body>div>div>div>div>div>div>select",
+                        "excluded": true
+                      },
+                      "tableRow": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "tableCol": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "controlMetaType": "Web",
+                      "name": {
+                        "value": "idkpp",
+                        "excluded": true
+                      },
+                      "index": {
+                        "value": "1",
+                        "excluded": true
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "51aed873-c669-4d1e-ad09-f0442e36eb39",
+          "name": "button_btncari",
+          "filePath": "8ee8d1fc-66ec-4658-b2a4-ac35cebe7d1d.jpg",
+          "content": {
+            "automationType": "Chrome",
+            "processName": {
+              "value": "chrome"
+            },
+            "filePath": {
+              "value": "chrome.exe"
+            },
+            "version": {
+              "value": "1.3"
+            },
+            "childControls": [
+              {
+                "identifier": {
+                  "role": {
+                    "value": "window"
+                  },
+                  "title": {
+                    "value": "Aplikasi Portal - Direktorat Jenderal Pajak"
+                  },
+                  "url": {
+                    "value": "https://appportal.intranet.pajak.go.id/portal/#",
+                    "excluded": true
+                  },
+                  "className": {
+                    "value": "Chrome_WidgetWin_1"
+                  },
+                  "controlMetaType": "Tab"
+                },
+                "childControls": [
+                  {
+                    "identifier": {
+                      "tag": {
+                        "value": "INPUT"
+                      },
+                      "id": {
+                        "value": "btncari"
+                      },
+                      "class": {
+                        "value": "btn btn-danger",
+                        "excluded": true
+                      },
+                      "type": {
+                        "value": "button",
+                        "excluded": true
+                      },
+                      "ancestorId": {
+                        "value": "form ",
+                        "excluded": true
+                      },
+                      "ancestorClass": {
+                        "value": "col-md-1 form group",
+                        "excluded": true
+                      },
+                      "isLeaf": {
+                        "value": "1",
+                        "excluded": true
+                      },
+                      "cssSelector": {
+                        "value": "body>div>div>div>div>div>div>input",
+                        "excluded": true
+                      },
+                      "sInfo": {
+                        "value": "Cari",
+                        "excluded": true
+                      },
+                      "tableRow": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "tableCol": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "controlMetaType": "Web",
+                      "name": {
+                        "value": "submit",
+                        "excluded": true
+                      },
+                      "index": {
+                        "value": "1",
+                        "excluded": true
+                      },
+                      "value": {
+                        "isCustom": true,
+                        "value": "Cari",
+                        "operator": "equals",
+                        "excluded": true
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "e6414ad5-6ae7-4ad2-a2a6-73eabf0ce9c3",
+          "name": "button_csv",
+          "filePath": "c1738b4e-21b7-422e-8dde-608f6ac2a60d.jpg",
+          "content": {
+            "automationType": "Chrome",
+            "processName": {
+              "value": "chrome"
+            },
+            "filePath": {
+              "value": "chrome.exe"
+            },
+            "version": {
+              "value": "1.3"
+            },
+            "childControls": [
+              {
+                "identifier": {
+                  "role": {
+                    "value": "window"
+                  },
+                  "title": {
+                    "value": "Aplikasi Portal - Direktorat Jenderal Pajak"
+                  },
+                  "url": {
+                    "value": "https://appportal.intranet.pajak.go.id/portal/#",
+                    "excluded": true
+                  },
+                  "className": {
+                    "value": "Chrome_WidgetWin_1"
+                  },
+                  "controlMetaType": "Tab"
+                },
+                "childControls": [
+                  {
+                    "identifier": {
+                      "tag": {
+                        "value": "BUTTON"
+                      },
+                      "class": {
+                        "value": "dt-button buttons-csv buttons-html5",
+                        "excluded": true
+                      },
+                      "type": {
+                        "value": "button",
+                        "excluded": true
+                      },
+                      "ancestorId": {
+                        "value": "example_wrapper",
+                        "excluded": true
+                      },
+                      "ancestorClass": {
+                        "value": "dt-buttons",
+                        "excluded": true
+                      },
+                      "isLeaf": {
+                        "value": "0",
+                        "excluded": true
+                      },
+                      "cssSelector": {
+                        "value": "body>div>div>div>div>button",
+                        "excluded": true
+                      },
+                      "sInfo": {
+                        "value": "CSV"
+                      },
+                      "tableRow": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "tableCol": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "tabIndex": {
+                        "value": "0",
+                        "excluded": true
+                      },
+                      "controlMetaType": "Web",
+                      "index": {
+                        "value": "1",
+                        "excluded": true
+                      },
+                      "aria-controls": {
+                        "isCustom": true,
+                        "value": "example",
+                        "operator": "equals",
+                        "excluded": true
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "originalName": "appportal"
+    },
+    {
+      "id": "e1784836-9bb1-447d-a072-8e9ecec3aa47",
+      "name": "spmkp",
+      "nodes": [],
+      "locators": [
+        {
+          "id": "a5b0a7bc-9e38-46ee-bd1b-c73576336022",
+          "name": "select_action",
+          "filePath": "47d08b35-1cfb-4027-be92-0d17f1a599d9.jpg",
+          "content": {
+            "automationType": "Chrome",
+            "processName": {
+              "value": "chrome"
+            },
+            "filePath": {
+              "value": "chrome.exe"
+            },
+            "version": {
+              "value": "1.3"
+            },
+            "childControls": [
+              {
+                "identifier": {
+                  "role": {
+                    "value": "window"
+                  },
+                  "title": {
+                    "value": "Aplikasi Portal - Direktorat Jenderal Pajak"
+                  },
+                  "url": {
+                    "value": "https://appportal.intranet.pajak.go.id/portal/#",
+                    "excluded": true
+                  },
+                  "className": {
+                    "value": "Chrome_WidgetWin_1"
+                  },
+                  "controlMetaType": "Tab"
+                },
+                "childControls": [
+                  {
+                    "identifier": {
+                      "tag": {
+                        "value": "SELECT"
+                      },
+                      "id": {
+                        "value": "action"
+                      },
+                      "class": {
+                        "value": "form-control",
+                        "excluded": true
+                      },
+                      "ancestorId": {
+                        "value": "form ",
+                        "excluded": true
+                      },
+                      "ancestorClass": {
+                        "value": "col-md-3",
+                        "excluded": true
+                      },
+                      "isLeaf": {
+                        "value": "0",
+                        "excluded": true
+                      },
+                      "cssSelector": {
+                        "value": "body>div>div>div>div>div>div>select",
+                        "excluded": true
+                      },
+                      "tableRow": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "tableCol": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "controlMetaType": "Web",
+                      "name": {
+                        "value": "action",
+                        "excluded": true
+                      },
+                      "index": {
+                        "value": "1",
+                        "excluded": true
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "e2115144-82e5-4706-bcb4-bc9853aa3021",
+          "name": "button_btncari",
+          "filePath": "9d5c1738-a107-4584-8fd5-e2d8fcb0196e.jpg",
+          "content": {
+            "automationType": "Chrome",
+            "processName": {
+              "value": "chrome"
+            },
+            "filePath": {
+              "value": "chrome.exe"
+            },
+            "version": {
+              "value": "1.3"
+            },
+            "childControls": [
+              {
+                "identifier": {
+                  "role": {
+                    "value": "window"
+                  },
+                  "title": {
+                    "value": "Aplikasi Portal - Direktorat Jenderal Pajak"
+                  },
+                  "url": {
+                    "value": "https://appportal.intranet.pajak.go.id/portal/#",
+                    "excluded": true
+                  },
+                  "className": {
+                    "value": "Chrome_WidgetWin_1"
+                  },
+                  "controlMetaType": "Tab"
+                },
+                "childControls": [
+                  {
+                    "identifier": {
+                      "tag": {
+                        "value": "INPUT"
+                      },
+                      "id": {
+                        "value": "btncari",
+                        "excluded": true
+                      },
+                      "class": {
+                        "value": "btn btn-danger",
+                        "excluded": true
+                      },
+                      "type": {
+                        "value": "button",
+                        "excluded": true
+                      },
+                      "ancestorId": {
+                        "value": "form ",
+                        "excluded": true
+                      },
+                      "ancestorClass": {
+                        "value": "col-md-1 form group",
+                        "excluded": true
+                      },
+                      "isLeaf": {
+                        "value": "1",
+                        "excluded": true
+                      },
+                      "cssSelector": {
+                        "value": "body>div>div>div>div>div>div>input",
+                        "excluded": true
+                      },
+                      "sInfo": {
+                        "value": "Cari",
+                        "excluded": true
+                      },
+                      "tableRow": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "tableCol": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "controlMetaType": "Web",
+                      "name": {
+                        "value": "submit",
+                        "excluded": true
+                      },
+                      "index": {
+                        "value": "1",
+                        "excluded": true
+                      },
+                      "value": {
+                        "isCustom": true,
+                        "value": "Cari",
+                        "operator": "equals",
+                        "excluded": true
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "2eb76505-1ca1-4118-ac6c-791c1dd09d8f",
+          "name": "button_csv",
+          "filePath": "5fcf3cc2-e553-4368-b88d-28d3b7adf1ad.jpg",
+          "content": {
+            "automationType": "Chrome",
+            "processName": {
+              "value": "chrome"
+            },
+            "filePath": {
+              "value": "chrome.exe"
+            },
+            "version": {
+              "value": "1.3"
+            },
+            "childControls": [
+              {
+                "identifier": {
+                  "role": {
+                    "value": "window"
+                  },
+                  "title": {
+                    "value": "Aplikasi Portal - Direktorat Jenderal Pajak"
+                  },
+                  "url": {
+                    "value": "https://appportal.intranet.pajak.go.id/portal/#",
+                    "excluded": true
+                  },
+                  "className": {
+                    "value": "Chrome_WidgetWin_1"
+                  },
+                  "controlMetaType": "Tab"
+                },
+                "childControls": [
+                  {
+                    "identifier": {
+                      "tag": {
+                        "value": "BUTTON"
+                      },
+                      "class": {
+                        "value": "dt-button buttons-csv buttons-html5",
+                        "excluded": true
+                      },
+                      "type": {
+                        "value": "button",
+                        "excluded": true
+                      },
+                      "ancestorId": {
+                        "value": "example_wrapper",
+                        "excluded": true
+                      },
+                      "ancestorClass": {
+                        "value": "dt-buttons",
+                        "excluded": true
+                      },
+                      "isLeaf": {
+                        "value": "0",
+                        "excluded": true
+                      },
+                      "cssSelector": {
+                        "value": "body>div>div>div>div>button",
+                        "excluded": true
+                      },
+                      "sInfo": {
+                        "value": "CSV"
+                      },
+                      "tableRow": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "tableCol": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "tabIndex": {
+                        "value": "0",
+                        "excluded": true
+                      },
+                      "controlMetaType": "Web",
+                      "index": {
+                        "value": "1",
+                        "excluded": true
+                      },
+                      "aria-controls": {
+                        "isCustom": true,
+                        "value": "example",
+                        "operator": "equals",
+                        "excluded": true
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "4f5ff2d4-8fe8-4010-b34b-295806bb934d",
+          "name": "select_dd_kppdankanwilplus",
+          "filePath": "f17be480-472e-4119-a9f6-04f2dc50d472.jpg",
+          "content": {
+            "automationType": "Chrome",
+            "processName": {
+              "value": "chrome"
+            },
+            "filePath": {
+              "value": "chrome.exe"
+            },
+            "version": {
+              "value": "1.3"
+            },
+            "childControls": [
+              {
+                "identifier": {
+                  "role": {
+                    "value": "window"
+                  },
+                  "title": {
+                    "value": "Aplikasi Portal - Direktorat Jenderal Pajak"
+                  },
+                  "url": {
+                    "value": "https://appportal.intranet.pajak.go.id/portal/#",
+                    "excluded": true
+                  },
+                  "className": {
+                    "value": "Chrome_WidgetWin_1"
+                  },
+                  "controlMetaType": "Tab"
+                },
+                "childControls": [
+                  {
+                    "identifier": {
+                      "tag": {
+                        "value": "SELECT"
+                      },
+                      "id": {
+                        "value": "dd_kppdankanwilplus"
+                      },
+                      "class": {
+                        "value": "form-control",
+                        "excluded": true
+                      },
+                      "ancestorId": {
+                        "value": "form ",
+                        "excluded": true
+                      },
+                      "ancestorClass": {
+                        "value": "col-md-2 form group",
+                        "excluded": true
+                      },
+                      "isLeaf": {
+                        "value": "0",
+                        "excluded": true
+                      },
+                      "cssSelector": {
+                        "value": "body>div>div>div>div>div>div>select",
+                        "excluded": true
+                      },
+                      "tableRow": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "tableCol": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "controlMetaType": "Web",
+                      "name": {
+                        "value": "pilKpp",
+                        "excluded": true
+                      },
+                      "index": {
+                        "value": "1",
+                        "excluded": true
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "originalName": "new_folder"
+    },
+    {
+      "id": "c5796b72-5f25-4e7e-b837-1430fb6b1692",
+      "name": "appportal",
+      "nodes": [],
+      "locators": [
+        {
+          "id": "1026d3a4-7ca3-4865-a03f-6b446e33934f",
+          "name": "a_data_penerimaan",
+          "filePath": "ac92386a-d5c2-4aff-a2aa-c6ff74984f51.jpg",
+          "content": {
+            "automationType": "Chrome",
+            "processName": {
+              "value": "chrome"
+            },
+            "filePath": {
+              "value": "chrome.exe"
+            },
+            "version": {
+              "value": "1.3"
+            },
+            "childControls": [
+              {
+                "identifier": {
+                  "role": {
+                    "value": "window"
+                  },
+                  "title": {
+                    "value": "Aplikasi Portal - Direktorat Jenderal Pajak"
+                  },
+                  "url": {
+                    "value": "https://appportal.intranet.pajak.go.id/portal/#",
+                    "excluded": true
+                  },
+                  "className": {
+                    "value": "Chrome_WidgetWin_1"
+                  },
+                  "controlMetaType": "Tab"
+                },
+                "childControls": [
+                  {
+                    "identifier": {
+                      "tag": {
+                        "value": "A"
+                      },
+                      "class": {
+                        "value": "selected",
+                        "excluded": true
+                      },
+                      "ancestorId": {
+                        "value": "smoothmenu1"
+                      },
+                      "ancestorClass": {
+                        "value": "ddsmoothmenu",
+                        "excluded": true
+                      },
+                      "isLeaf": {
+                        "value": "0",
+                        "excluded": true
+                      },
+                      "cssSelector": {
+                        "value": "body>div>div>ul>li>a",
+                        "excluded": true
+                      },
+                      "sInfo": {
+                        "value": "DATA PENERIMAAN"
+                      },
+                      "tableRow": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "tableCol": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "href": {
+                        "value": "#",
+                        "excluded": true
+                      },
+                      "controlMetaType": "Web",
+                      "index": {
+                        "value": "1",
+                        "excluded": true
+                      },
+                      "style": {
+                        "isCustom": true,
+                        "value": "padding-right: 23px;",
+                        "operator": "equals",
+                        "excluded": true
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "ce925e67-f847-4292-bb50-23f17302bf6d",
+          "name": "submit_loginsub",
+          "filePath": "c7f6e173-4d29-4423-9ba6-d208f7ace2df.jpg",
+          "content": {
+            "automationType": "Chrome",
+            "processName": {
+              "value": "chrome"
+            },
+            "filePath": {
+              "value": "chrome.exe"
+            },
+            "version": {
+              "value": "1.3"
+            },
+            "childControls": [
+              {
+                "identifier": {
+                  "role": {
+                    "value": "window"
+                  },
+                  "title": {
+                    "value": "Halaman Login | Aplikasi PORTALDJP | Direktorat Jenderal Pajak"
+                  },
+                  "url": {
+                    "value": "https://appportal.intranet.pajak.go.id/login/",
+                    "excluded": true
+                  },
+                  "className": {
+                    "value": "Chrome_WidgetWin_1"
+                  },
+                  "controlMetaType": "Tab"
+                },
+                "childControls": [
+                  {
+                    "identifier": {
+                      "tag": {
+                        "value": "INPUT"
+                      },
+                      "id": {
+                        "value": "loginsub"
+                      },
+                      "class": {
+                        "value": "button_green",
+                        "excluded": true
+                      },
+                      "type": {
+                        "value": "submit",
+                        "excluded": true
+                      },
+                      "ancestorId": {
+                        "value": "loginform",
+                        "excluded": true
+                      },
+                      "ancestorClass": {
+                        "value": "loginbox_content",
+                        "excluded": true
+                      },
+                      "isLeaf": {
+                        "value": "1",
+                        "excluded": true
+                      },
+                      "cssSelector": {
+                        "value": "body>form>div>div>div>input",
+                        "excluded": true
+                      },
+                      "sInfo": {
+                        "value": "Login",
+                        "excluded": true
+                      },
+                      "tableRow": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "tableCol": {
+                        "value": "-1",
+                        "excluded": true
+                      },
+                      "controlMetaType": "Web",
+                      "name": {
+                        "value": "sublogin",
+                        "excluded": true
+                      },
+                      "index": {
+                        "value": "1",
+                        "excluded": true
+                      },
+                      "value": {
+                        "isCustom": true,
+                        "value": "Login",
+                        "operator": "equals",
+                        "excluded": true
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "originalName": "new_folder"
+    }
+  ],
+  "locators": [],
+  "originalName": "intranet1"
+}
