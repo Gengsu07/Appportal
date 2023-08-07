@@ -2,10 +2,17 @@ from sqlalchemy import create_engine
 import os
 from urllib.parse import quote_plus
 import pandas as pd
-
+from export_sql import export_postgres
 from dotenv import load_dotenv
 
 load_dotenv()
+lokal_mysql_username = os.getenv("LOCAL_MYSQL_USERNAME")
+lokal_mysql_password = os.getenv("LOCAL_MYSQL_PASSWORD")
+lokal_mysql_host = os.getenv("LOCAL_MYSQL_HOST")
+lokal_mysql_con = create_engine(
+    f"mysql://{lokal_mysql_username}:{lokal_mysql_password}@{lokal_mysql_host}/mpninfo"
+)
+
 mysql_username = os.getenv("MYSQL_USERNAME")
 mysql_password = os.getenv("MYSQL_PASSWORD")
 mysql_host = os.getenv("MYSQL_HOST")
@@ -138,7 +145,7 @@ SELECT admin,
     WHERE admin = kpp_admin2 AND kpp_admin2 = admin and YEAR(TANGGALDOC)=2023
 """
 
-union = pd.read_sql(kueri_union, con=mysql_con)
+union = pd.read_sql(kueri_union, con=lokal_mysql_con)
 union["NPWP15"] = union["npwp"] + union["kpp"] + union["cabang"]
 
 data_sektor = pd.read_sql(
@@ -163,9 +170,78 @@ LEFT JOIN dimensi.dim_klu dk ON
 
 kdmap = pd.read_sql(
     """ 
-    select "KDMAP","MAP" from dimensi.map_polos""",
+    select "KDMAP","KDBAYAR","URAIAN","MAP" from dimensi.map_lengkap""",
     con=postgre_con,
 )
 data = union.merge(data_sektor, on="NPWP15", how="left")
-data = data.merge(kdmap, left_on="kdmap", right_on="KDMAP", how="outer")
-print(union.head())
+data = data.merge(
+    kdmap, left_on=["kdmap", "kdbayar"], right_on=["KDMAP", "KDBAYAR"], how="left"
+)
+data.drop(columns=["KDMAP", "KDBAYAR"], inplace=True)
+col_toint = [
+    "tahun",
+]
+data[col_toint] = data[col_toint].apply(lambda x: pd.to_numeric(x, downcast="integer"))
+
+# ADJUSTMENT SESUAIKAN ppmpkm2023
+# -uppercase columns
+data.columns = [x.upper() for x in data.columns]
+# nama
+data.rename(columns={"NAMA": "NAMA_WP"}, inplace=True)
+
+# urutkan kolom
+ppmpkm_kolom = [
+    "ADMIN",
+    "NAMA_WP",
+    "KDMAP",
+    "KDBAYAR",
+    "MASA",
+    "MASA2",
+    "TAHUN",
+    "TANGGALBAYAR",
+    "BULANBAYAR",
+    "TAHUNBAYAR",
+    "DATEBAYAR",
+    "NOMINAL",
+    "NTPN",
+    "BANK",
+    "NOSK",
+    "NOSPM",
+    "KET",
+    "NPWP15",
+    "NAMA_AR",
+    "SEKSI",
+    "SEGMENTASI_WP",
+    "JENIS_WP",
+    "KODE_KLU",
+    "NAMA_KLU",
+    "KD_KATEGORI",
+    "NM_KATEGORI",
+    "KD_GOLPOK",
+    "NM_GOLPOK",
+    "URAIAN",
+    "MAP",
+]
+data = data[ppmpkm_kolom]
+
+# DELETE TAHUN 2023 DLUU
+# Create a connection to the database
+import psycopg2
+
+print(postgres_host, postgres_username, postgres_password_parse, postgres_database)
+connection = psycopg2.connect(
+    host=postgres_host,
+    user=postgres_username,
+    password="kwl@110",
+    database=postgres_database,
+)
+cursor = connection.cursor()
+
+delete_query = 'DELETE FROM ppmpkm WHERE "TAHUNBAYAR"=2023 '
+cursor.execute(delete_query)
+connection.commit()
+print(f"{cursor.rowcount} row(s) deleted.")
+
+data.to_sql("ppmpkm", con=postgre_con, index=False, if_exists="append")
+
+# export_postgres(data, "penerimaan2023")

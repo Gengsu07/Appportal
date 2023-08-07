@@ -15,16 +15,39 @@ username = os.getenv("APPPORTAL_USERNAME")
 password = os.getenv("APPPORTAL_PASSWORD")
 from sqlalchemy import create_engine
 
-masterfile_con = create_engine("mysql://root@localhost/registrasi".format("sgwi2341"))
+mysql_username = os.getenv("MYSQL_USERNAME")
+mysql_password = os.getenv("MYSQL_PASSWORD")
+mysql_host = os.getenv("MYSQL_HOST")
+masterfile_con = create_engine(
+    f"mysql://{mysql_username}:{mysql_password}@{mysql_host}/registrasi"
+)
 
 today = datetime.date.today()
-# download_path = r"C:\Users\810202558\Downloads"
-download_path = r"C:\Users\sugengw07\Downloads"
-# baseDownloadedDir = r"D:\PROJECTS\Appportal\downloaded"
-baseDownloadedDir = r"D:\PROJECTS\Appportal\downloaded"
-baseUrl = "https://appportal.intranet.pajak.go.id/portal/download/lsnfjkasbnfjnasjkfnjbnjnjknbkjnfjknbjkfnbkjfnbi3939489184.php?p1="
-# kpp = ['001']
-spm_baseUrl = "https://appportal.intranet.pajak.go.id/portal/spm/dataspmcsv.php?"
+
+
+def utilities():
+    download_path = r"C:\Users\810202558\Downloads"
+    # download_path = r"C:\Users\sugengw07\Downloads"
+    baseDownloadedDir = r"D:\PROJECTS\Appportal\downloaded"
+    # baseDownloadedDir = r"D:\PROJECTS\Appportal\downloaded"
+    baseUrl = "https://appportal.intranet.pajak.go.id/portal/download/lsnfjkasbnfjnasjkfnjbnjnjknbkjnfjknbjkfnbkjfnbi3939489184.php?p1="
+    # kpp = ['001']
+    spm_baseUrl = "https://appportal.intranet.pajak.go.id/portal/spm/dataspmcsv.php?"
+    return {
+        "download_path": download_path,
+        "baseDownloadedDir": baseDownloadedDir,
+        "baseUrl": baseUrl,
+        "spm_baseUrl": spm_baseUrl,
+    }
+
+
+utils = utilities()
+download_path, baseDownloadedDir, baseUrl, spm_baseUrl = (
+    utils["download_path"],
+    utils["baseDownloadedDir"],
+    utils["baseUrl"],
+    utils["spm_baseUrl"],
+)
 
 
 def generate_month_list():
@@ -565,7 +588,7 @@ def etl_pbk(pbk_files):
             "KDMAP2",
             "KDBAYAR2",
             "MASA_PAJAK2",
-            "TAHUN_PAJAK2",
+            "TAHUNPAJAK2",
             "KPP_ADMIN2",
             "NTPN",
             "NO_PROD_HUKUM",

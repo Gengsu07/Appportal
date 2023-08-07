@@ -1,4 +1,4 @@
 UBAH:
-1. download_path
-2. baseDownloadedDir
+1. download_path di mpnspm utilities
+2. baseDownloadedDir di mpnspm utilities
 3. di mpnspm.py rubah koneksi ke sidjp masterfile karena data yg usd ngga ada admin nya
