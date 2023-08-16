@@ -151,6 +151,7 @@ union["NPWP15"] = union["npwp"] + union["kpp"] + union["cabang"]
 data_sektor = pd.read_sql(
     """ SELECT
 	m.NPWP15,
+    m.NAMA_WP,
 	m.NAMA_AR ,
 	m.SEKSI ,
 	m.SEGMENTASI_WP ,
@@ -187,7 +188,6 @@ data[col_toint] = data[col_toint].apply(lambda x: pd.to_numeric(x, downcast="int
 # -uppercase columns
 data.columns = [x.upper() for x in data.columns]
 # nama
-data.rename(columns={"NAMA": "NAMA_WP"}, inplace=True)
 
 # urutkan kolom
 ppmpkm_kolom = [
