@@ -204,28 +204,25 @@ ppmpkm_kolom = [
     "DATEBAYAR",
     "NOMINAL",
     "NTPN",
-    "BANK",
-    "NOSK",
-    "NOSPM",
     "KET",
     "NPWP15",
     "NAMA_AR",
     "SEKSI",
     "SEGMENTASI_WP",
     "JENIS_WP",
-    "KODE_KLU",
     "NAMA_KLU",
     "KD_KATEGORI",
     "NM_KATEGORI",
     "KD_GOLPOK",
     "NM_GOLPOK",
-    "URAIAN",
     "MAP",
 ]
 data = data[ppmpkm_kolom]
 
 # DELETE TAHUN 2023 DLUU
 # Create a connection to the database
+
+# data.to_excel(r"D:\HASILKUERI\2023.xlsx", index=False)
 import psycopg2
 
 print(postgres_host, postgres_username, postgres_password_parse, postgres_database)
@@ -244,4 +241,4 @@ print(f"{cursor.rowcount} row(s) deleted.")
 
 data.to_sql("ppmpkm", con=postgre_con, index=False, if_exists="append")
 
-# export_postgres(data, "penerimaan2023")
+export_postgres(data, "penerimaan2023")
